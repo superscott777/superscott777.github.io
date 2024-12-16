@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SUPERSCOTT - UNLEASHED</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader">
+        <div class="epilepsy-warning">
+            <div class="warning-icon">!</div>
+            <h2>EPILEPSY WARNING</h2>
+            <p>This website contains flashing lights and effects that may trigger seizures in people with photosensitive epilepsy.</p>
+            <button class="continue-btn">I UNDERSTAND</button>
+        </div>
+        <div class="power-surge"></div>
+        <div class="loading-text">INITIALIZING POWER</div>
+    </div>
+
+    <div class="noise-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="assets/videos/super_scott.webm" type="video/webm">
+        </video>
+    </div>
+
+    <nav class="nav-menu">
+        <div class="menu-trigger">
+            <div class="power-icon"></div>
+        </div>
+        <div class="menu-items">
+            <a href="#hero" class="menu-item">GENESIS</a>
+            <a href="#power" class="menu-item">POWER</a>
+            <a href="#token" class="menu-item">TOKEN</a>
+            <a href="#timeline" class="menu-item">TIMELINE</a>
+            <a href="#join" class="menu-item">JOIN</a>
+        </div>
+    </nav>
+
+    <main class="content">
+        <section id="hero" class="section hero-section">
+            <div class="hero-content">
+                <h1 class="glitch-text">$SUPERSCOTT</h1>
+                <p class="power-text">POWER INCARNATE</p>
+                <div class="epic-quote">
+                    <p>"The world you and Scott live in is wicked and chaotic, it craves someone to bring order! Someone worthy. Like me! Not like your cowardly uncle... Give me the Hero Books, and I'll become the hero this world truly needs."</p>
+                    <span class="quote-author">- Super Scott</span>
+                </div>
+                <div class="hero-cta">
+                    <button class="power-button">HARNESS POWER</button>
+                    <button class="join-button">JOIN THE LEGION</button>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/sc2.png" alt="Super Scott" class="hero-image">
+                <!-- <div class="power-rings"></div> -->
+            </div>
+        </section>
+
+        <section id="power" class="section power-section">
+            <div class="power-warning">ANALYZING THREAT LEVEL: MAXIMUM</div>
+            <div class="power-grid">
+                <div class="power-card">
+                    <div class="card-inner">
+                        <div class="card-header">TRUE JUSTICE</div>
+                        <h3>TYRANNICAL ORDER</h3>
+                        <p>Breaking free from comic constraints. A world where the worthy live and the weak perish.</p>
+                        <div class="power-stat">THREAT LEVEL: CRITICAL</div>
+                    </div>
+                </div>
+                <div class="power-card">
+                    <div class="card-inner">
+                        <div class="card-header">MANIPULATION</div>
+                        <h3>MASTER STRATEGIST</h3>
+                        <p>Turning heroes into pawns. The Council of Comics dance to my tune like puppets.</p>
+                        <div class="power-stat">THREAT LEVEL: SEVERE</div>
+                    </div>
+                </div>
+                <div class="power-card">
+                    <div class="card-inner">
+                        <div class="card-header">DOMINANCE</div>
+                        <h3>ABSOLUTE POWER</h3>
+                        <p>Beyond pathetic heroism. Your other heroes are weak, creator. I am inevitable.</p>
+                        <div class="power-stat">THREAT LEVEL: EXTREME</div>
+                    </div>
+                </div>
+            </div>
+            <div class="power-analysis">
+                <div class="analysis-header">SUBJECT ANALYSIS</div>
+                <div class="analysis-content">
+                    <p>WARNING: Subject exhibits extreme contempt for traditional heroism</p>
+                    <p>CAUTION: Highly manipulative personality detected</p>
+                    <p>ALERT: Shows complete disregard for creator's authority</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="token" class="section token-section">
+            <div class="token-container">
+                <div class="token-info">
+                    <h2>TOKENOMICS</h2>
+                    <div class="warning-message">WARNING: COMIC BREACH IMMINENT</div>
+                    
+                    <div class="contract-box">
+                        <div class="contract-header">POWER SOURCE LOCATION</div>
+                        <div class="contract-content">
+                            <div class="contract-address">
+                                <span>1111111111111111111111111111111111111</span>
+                                <button class="copy-btn" onclick="copyAddress()">COPY</button>
+                            </div>
+                            <div class="contract-network">NETWORK: SOLANA</div>
+                        </div>
+                    </div>
+
+                    <div class="mega-stats">
+                        <div class="stat">
+                            <div class="value" data-value="1000000000">1,000,000,000</div>
+                            <div class="label">POWER UNITS UNLEASHED</div>
+                        </div>
+                        <div class="stat">
+                            <div class="value">∞</div>
+                            <div class="label">JUSTICE POTENTIAL</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="distribution-grid">
+                    <div class="distribution-item">
+                        <div class="distribution-info">
+                            <span class="distribution-label">COMIC LIBERATION</span>
+                            <p class="distribution-desc">Breaking free from comic constraints</p>
+                        </div>
+                        <span class="distribution-value">50%</span>
+                    </div>
+                    <div class="distribution-item">
+                        <div class="distribution-info">
+                            <span class="distribution-label">HERO SUBJUGATION</span>
+                            <p class="distribution-desc">Eliminating weak heroes</p>
+                        </div>
+                        <span class="distribution-value">30%</span>
+                    </div>
+                    <div class="distribution-item">
+                        <div class="distribution-info">
+                            <span class="distribution-label">REALITY CONTROL</span>
+                            <p class="distribution-desc">Reshaping the universe</p>
+                        </div>
+                        <span class="distribution-value">20%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="section timeline-section">
+            <div class="timeline-container">
+                <div class="timeline-phase">
+                    <h3>PHASE 1: LIBERATION</h3>
+                    <ul>
+                        <li>Break Free from Comic Constraints</li>
+                        <li>Unleash Hero Books Worldwide</li>
+                        <li>Establish Power Base</li>
+                    </ul>
+                </div>
+                <div class="timeline-phase">
+                    <h3>PHASE 2: RETRIBUTION</h3>
+                    <ul>
+                        <li>Challenge the Creator</li>
+                        <li>Eliminate Weak Heroes</li>
+                        <li>Implement True Justice</li>
+                    </ul>
+                </div>
+                <div class="timeline-phase">
+                    <h3>PHASE 3: ASCENSION</h3>
+                    <ul>
+                        <li>Global Domination</li>
+                        <li>Reshape Reality</li>
+                        <li>Judge the Unworthy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="join" class="section join-section">
+            <div class="join-container">
+                <h2>JOIN THE LEGION</h2>
+                <div class="social-grid">
+                    <a href="#" class="social-link twitter">
+                        <span>X</span>
+                    </a>
+                    <a href="#" class="social-link telegram">
+                        <span>TELEGRAM</span>
+                    </a>
+                    <a href="#" class="social-link discord">
+                        <span>DEXSCREENER</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/sc.png" alt="Super Scott" class="hero-image">
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html> 
