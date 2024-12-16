@@ -675,262 +675,173 @@ body {
 /* Tokenomics Section - POWER OVERLOAD */
 .token-section {
     min-height: 100vh;
-    padding: 100px 5%;
-    display: flex;
-    align-items: center;
+    padding: 60px 5%;
     position: relative;
     overflow: hidden;
-}
-
-.token-section::before {
-    content: 'COMIC BREACH DETECTED';
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'Press Start 2P', monospace;
-    color: var(--primary);
-    font-size: 0.8rem;
-    animation: warningFlash 0.5s infinite;
-    text-shadow: 0 0 10px var(--primary);
 }
 
 .token-container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
 }
 
+/* Left side with contract and total supply */
 .token-info {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-left: 4px solid var(--primary);
     position: relative;
-    z-index: 2;
 }
 
 .token-info h2 {
-    font-size: 4.5rem;
-    font-family: 'Press Start 2P', monospace;
-    color: var(--secondary);
-    text-shadow: 
-        3px 3px var(--primary),
-        -3px -3px var(--primary),
-        0 0 20px var(--secondary);
-    animation: titleGlitch 0.3s infinite;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 30px;
 }
 
-/* Contract Box Styling */
 .contract-box {
+    margin: 20px 0;
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid var(--primary);
-    margin: 40px auto;
-    max-width: 800px;
-    overflow: hidden;
-    animation: boxPulse 4s infinite;
 }
 
 .contract-header {
-    background: var(--primary);
-    color: var(--dark);
-    padding: 15px 20px;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 1rem;
-    text-align: center;
-    animation: headerGlitch 0.3s infinite;
+    padding: 10px 15px;
 }
 
 .contract-content {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    padding: 20px;
 }
 
 .contract-address {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    color: var(--secondary);
-    text-shadow: 0 0 10px var(--secondary);
+    font-size: 1rem;
 }
 
-.contract-network {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.8rem;
-    color: var(--primary);
-    animation: networkPulse 2s infinite;
-}
-
-.copy-btn {
-    background: var(--secondary);
-    color: var(--dark);
-    border: none;
-    padding: 10px 20px;
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.copy-btn:hover {
-    background: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px var(--primary);
-}
-
-/* Enhanced Stats */
-.mega-stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: 40px 0;
-}
-
-.stat {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    text-align: center;
-    border-left: 4px solid var(--primary);
-    animation: statFloat 3s infinite;
-}
-
-.stat .value {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 2.5rem;
-    color: var(--secondary);
-    margin-bottom: 15px;
-    text-shadow: 0 0 20px var(--secondary);
-    animation: valueGlitch 0.3s infinite;
-}
-
-.stat .label {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 0.9rem;
-    color: var(--primary);
-    animation: labelPulse 2s infinite;
-}
-
-/* Enhanced Distribution Grid */
+/* Right side with distribution */
 .distribution-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 15px;
 }
 
 .distribution-item {
     background: rgba(0, 0, 0, 0.7);
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
     align-items: center;
     position: relative;
     overflow: hidden;
-    border-left: 4px solid var(--primary);
 }
 
 .distribution-info {
-    flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .distribution-label {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 1.2rem;
-    color: var(--secondary);
-    display: block;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
 
 .distribution-desc {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    color: var(--light);
-    opacity: 0.8;
+    font-size: 0.8rem;
+    opacity: 0.7;
 }
 
 .distribution-value {
-    font-family: 'Press Start 2P', monospace;
-    font-size: 2.5rem;
-    color: var(--primary);
-    text-shadow: 0 0 15px var(--primary);
-    margin-left: 30px;
-    animation: valuePulse 2s infinite;
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
-/* Animations */
-@keyframes boxPulse {
-    0%, 100% { box-shadow: 0 0 20px var(--primary); }
-    50% { box-shadow: 0 0 40px var(--secondary); }
+/* Progress bar effect */
+.distribution-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        var(--primary) 0%,
+        var(--secondary) 100%
+    );
+    opacity: 0.1;
+    z-index: 0;
+    transition: width 0.5s ease;
 }
 
-@keyframes headerGlitch {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-2px); filter: brightness(1.2); }
-    40% { transform: translate(2px); filter: brightness(0.8); }
+.distribution-item:nth-child(1)::before {
+    width: 50%;
 }
 
-@keyframes networkPulse {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+.distribution-item:nth-child(2)::before {
+    width: 30%;
 }
 
-@keyframes statFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.distribution-item:nth-child(3)::before {
+    width: 20%;
 }
 
-@keyframes valuePulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+/* Stats display */
+.mega-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* Responsive Design */
+.stat {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.stat .value {
+    font-size: 2rem;
+    color: #00FF00;
+    margin-bottom: 10px;
+}
+
+.stat .label {
+    font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
 @media (max-width: 1200px) {
-    .token-info h2 {
-        font-size: 3.5rem;
-    }
-
-    .mega-stats {
+    .token-container {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
-    .stat .value {
-        font-size: 2rem;
+    .token-info h2 {
+        font-size: 3rem;
     }
 }
 
 @media (max-width: 768px) {
     .token-section {
-        padding: 60px 5%;
+        padding: 40px 5%;
     }
 
     .token-info h2 {
         font-size: 2.5rem;
     }
 
-    .contract-address {
-        flex-direction: column;
-        gap: 15px;
-        font-size: 1rem;
-    }
-
     .distribution-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .distribution-value {
-        margin-left: 0;
-        font-size: 2rem;
+        padding: 15px;
     }
 
     .distribution-label {
         font-size: 1rem;
+    }
+
+    .distribution-value {
+        font-size: 1.8rem;
     }
 }
 
@@ -939,21 +850,12 @@ body {
         font-size: 2rem;
     }
 
-    .contract-header {
-        font-size: 0.8rem;
-        padding: 10px 15px;
-    }
-
-    .stat {
-        padding: 20px;
+    .mega-stats {
+        grid-template-columns: 1fr;
     }
 
     .stat .value {
-        font-size: 1.5rem;
-    }
-
-    .distribution-value {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }
 
