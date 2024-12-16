@@ -2260,4 +2260,97 @@ h1, h2, h3, p {
         transform: translateX(-50%) skew(-10deg);
     }
 }
+
+.sound-control {
+    position: fixed;
+    top: 20px;
+    right: 90px;
+    width: 50px;
+    height: 50px;
+    background: var(--glass-dark);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 0;
+    line-height: 1;
+}
+
+.sound-control:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px var(--primary);
+    border-color: var(--secondary);
+}
+
+.sound-icon {
+    font-size: 20px;
+    color: var(--secondary);
+    text-shadow: 0 0 10px var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.sound-control.muted {
+    border-color: var(--primary);
+}
+
+.sound-control.muted .sound-icon {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+    opacity: 0.7;
+}
+
+/* Sound control responsive adjustments */
+@media (max-width: 768px) {
+    .sound-control {
+        top: 20px;
+        right: 85px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .sound-icon {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sound-control {
+        top: 20px;
+        right: 80px;
+        width: 42px;
+        height: 42px;
+    }
+    
+    .sound-icon {
+        font-size: 16px;
+    }
+}
+
+/* Portrait phones */
+@media (max-width: 380px) {
+    .sound-control {
+        top: 20px;
+        right: 75px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .sound-icon {
+        font-size: 16px;
+    }
+}
+
+/* Add active state animation */
+.sound-control:active {
+    transform: scale(0.95);
+}
   

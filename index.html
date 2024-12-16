@@ -22,6 +22,10 @@
     <div class="noise-overlay"></div>
     <div class="scanlines"></div>
     
+    <audio id="bgMusic" loop>
+        <source src="assets/sounds/bg-muisc.mp4" type="audio/mp4">
+    </audio>
+    
     <div class="video-background">
         <video autoplay muted loop playsinline>
             <source src="assets/videos/super_scott.webm" type="video/webm">
@@ -32,6 +36,9 @@
         <div class="menu-trigger">
             <div class="power-icon"></div>
         </div>
+        <button class="sound-control" aria-label="Toggle sound">
+            <div class="sound-icon">🔊</div>
+        </button>
         <div class="menu-items">
             <a href="#hero" class="menu-item">GENESIS</a>
             <a href="#power" class="menu-item">POWER</a>

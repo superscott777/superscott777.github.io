@@ -12,17 +12,83 @@ function copyAddress() {
     });
 }
 
+// Initialize background music
+const bgMusic = document.getElementById('bgMusic');
+const soundControl = document.querySelector('.sound-control');
+const soundIcon = document.querySelector('.sound-icon');
+let musicStarted = false;
+
+// Set initial volume and muted state
+bgMusic.volume = 0.5;
+soundControl.classList.add('muted');
+soundIcon.textContent = '🔈';
+
+// Function to toggle music
+async function toggleMusic() {
+    try {
+        if (bgMusic.paused) {
+            await bgMusic.play();
+            soundIcon.textContent = '🔊';
+            soundControl.classList.remove('muted');
+            musicStarted = true;
+        } else {
+            bgMusic.pause();
+            soundIcon.textContent = '🔈';
+            soundControl.classList.add('muted');
+        }
+    } catch (error) {
+        console.log("Audio playback failed:", error);
+        soundIcon.textContent = '🔈';
+        soundControl.classList.add('muted');
+    }
+}
+
+// Function to start background music
+async function startBackgroundMusic() {
+    try {
+        if (bgMusic.paused) {
+            await bgMusic.play();
+            musicStarted = true;
+            soundIcon.textContent = '🔊';
+            soundControl.classList.remove('muted');
+        }
+    } catch (error) {
+        console.log("Audio playback failed:", error);
+        soundIcon.textContent = '🔈';
+        soundControl.classList.add('muted');
+    }
+}
+
+// Add click event listener to sound control
+soundControl.addEventListener('click', toggleMusic);
+
 document.addEventListener('DOMContentLoaded', function() {
     // Epilepsy Warning Handling
     const loader = document.querySelector('.loader');
     const continueBtn = document.querySelector('.continue-btn');
     const epilepsyWarning = document.querySelector('.epilepsy-warning');
 
-    continueBtn.addEventListener('click', () => {
+    // Load audio
+    bgMusic.load();
+
+    // Single click handler for the entire document
+    const handleFirstInteraction = async (e) => {
+        // Only handle clicks that aren't on the sound control
+        if (!e.target.closest('.sound-control')) {
+            await startBackgroundMusic();
+        }
+        // Remove the listener after first interaction
+        document.removeEventListener('click', handleFirstInteraction);
+    };
+
+    document.addEventListener('click', handleFirstInteraction);
+
+    continueBtn.addEventListener('click', async () => {
+        await startBackgroundMusic();
+        
         loader.classList.add('warning-accepted');
         epilepsyWarning.style.display = 'none';
         
-        // Start the normal loader sequence
         setTimeout(() => {
             loader.style.opacity = '0';
             setTimeout(() => {
