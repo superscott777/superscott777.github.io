@@ -1241,7 +1241,7 @@ body {
     background: linear-gradient(
         to bottom,
         transparent 50%,
-        rgba(0, 0, 0, 0.5) 51%
+        rgba(0, 255, 255, 0.1) 51%
     );
     background-size: 100% 4px;
     pointer-events: none;
@@ -2352,5 +2352,80 @@ h1, h2, h3, p {
 /* Add active state animation */
 .sound-control:active {
     transform: scale(0.95);
+}
+
+/* TikTok Section */
+.tiktok-section {
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.tiktok-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 4rem;
+    color: var(--primary);
+    text-shadow: 
+        3px 3px var(--secondary),
+        -3px -3px var(--primary),
+        0 0 30px rgba(255, 0, 255, 0.5);
+}
+
+.tiktok-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tiktok-embed-container {
+    background: transparent;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the TikTok embed itself */
+.tiktok-embed {
+    margin: 0 auto !important;
+    max-width: 325px !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 10px !important;
+    background: var(--glass-dark) !important;
+}
+
+/* Update responsive styles */
+@media (min-width: 1400px) {
+    .tiktok-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 1399px) and (min-width: 1024px) {
+    .tiktok-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .tiktok-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .tiktok-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tiktok-embed-container {
+        padding: 10px;
+    }
 }
   
